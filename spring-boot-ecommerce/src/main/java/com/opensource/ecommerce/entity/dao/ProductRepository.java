@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.opensource.ecommerce.entity.Product;
 
 @CrossOrigin("http://localhost:4200")
-public interface ProductRepository extends JpaRepository<Product, Long>{
+public interface ProductRepository extends JpaRepository<Product, Long> {
+	//http://localhost:8080/api/products/search/findByCategoryId?id=2
 	Page<Product> findByCategoryId(@Param("id") Long id, Pageable pageable);
 	
-	// Note: exposes end points would be '/api/products/search/findByCategoryId?id=2'
+	
+	//http://localhost:8080/api/products/search/findByNameContaining?name=Python
+	Page<Product> findByNameContaining(@Param("name") String name, Pageable pageable);
+	
 }
