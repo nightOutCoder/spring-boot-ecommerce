@@ -9,13 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.opensource.ecommerce.entity.State;
 
-@CrossOrigin("http://localhost:4200")
 @RepositoryRestResource
 public interface StateRepository extends JpaRepository<State, Integer>{
 
 	//http://localhost:8080/api/states/search/findByCountryCode?code=IN
 	List<State> findByCountryCode(@Param("code") String code);
-	
-	
-	
 }

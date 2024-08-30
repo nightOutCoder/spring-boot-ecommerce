@@ -1,6 +1,5 @@
 package com.opensource.ecommerce.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,7 @@ import com.opensource.ecommerce.dto.Purchase;
 import com.opensource.ecommerce.dto.PurchaseResponse;
 import com.opensource.ecommerce.service.CheckoutService;
 
-@CrossOrigin("http://localhost:4200")
+
 @RestController
 @RequestMapping("/api/checkout")
 //checkoutController ->checkoutService-->Spring Data JPA Repository
