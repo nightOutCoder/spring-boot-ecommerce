@@ -2,6 +2,8 @@ package com.opensource.ecommerce.entity;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,5 +40,9 @@ public class OrderItem {
 	
 	@ManyToOne
 	@JoinColumn(name = "order_id")
+	@JsonIgnore // To avoid recursive reference between Order and OrderItem: https://localhost:8443/api/customers
+	/*
+	@JsonIgnore annotation, which is used to instruct Jackson to exclude a specific property from the JSON serialization and deserialization processes. This can be particularly useful when you have fields in your class that you don't want to expose through your API or when certain fields are not needed in the JSON output
+	*/
 	private Order order;
 }
